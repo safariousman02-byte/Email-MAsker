@@ -6,36 +6,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Email Masker</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+<div class="container">
 
-        <div class="container">
+    <h1>🔐 MYSecurity</h1>
+    <p class="sub">Mask your email – keep your identity private.</p>
 
-            <h1>MYSecurity</h1>
+    <!-- INPUT + BUTTON -->
+    <div class="input-group">
+      <input type="text" id="emailInput" placeholder="Enter your email..." />
+      <button class="btn-mask" id="maskBtn">Mask</button>
+    </div>
 
-            <p>Manage your active crytographic identities and forwarding rules</p>
+    <!-- RESULT -->
+    <div class="result-box" id="resultBox">
+      <div class="result-row">
+        <span class="label">Original</span>
+        <span class="value" id="originalDisplay">—</span>
+      </div>
+      <div class="result-row">
+        <span class="label">Masked</span>
+        <span class="value masked" id="maskedDisplay">—</span>
+      </div>
+      <div class="result-row">
+        <span class="label">Action</span>
+        <button class="copy-btn" id="copyBtn">📋 Copy</button>
+      </div>
+    </div>
 
-            <button id="button01"><span>+</span> Create New</button>
-
-            <input type="text" id="input">
-
-            <div class="resultBox">
-                <div>
-                    <p>result</p>
-                    <input type="text">
-                </div>
-                <div>
-                    <p id="resultOrg">original</p>
-                    <p id="resultFin">final</p>
-                </div>
-                <div>
-                    <p>copy</p>
-
-                </div>
-            </div>
-
-        </div>
+  </div>
 
         <script src-"/script.js"></script>
         
