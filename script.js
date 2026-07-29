@@ -4,27 +4,18 @@ const emailInput = document.getElementById('emailInput');
     const maskedDisplay = document.getElementById('maskedDisplay');
     const copyBtn = document.getElementById('copyBtn');
 
-    // =============================================
-    // MASK FUNCTION
-    // =============================================
-    function maskEmail(email) {
-      // Remove extra spaces
-      email = email.trim();
+     function maskEmail(email) {
+        email = email.trim();
 
-      // Must contain @
       if (!email.includes('@')) {
         throw new Error('Invalid email – missing "@"');
       }
 
-      // Split into local part and domain
       const [local, domain] = email.split('@');
 
-      // If local part is too short, return as-is
       if (local.length <= 2) {
         return email;
       }
-
-      // Keep first char, mask middle, keep last char before @
       const first = local[0];
       const last = local[local.length - 1];
       const middle = '*'.repeat(Math.min(local.length - 2, 6));
@@ -34,10 +25,7 @@ const emailInput = document.getElementById('emailInput');
       return maskedLocal + '@' + domain;
     }
 
-    // =============================================
-    // HANDLE MASK
-    // =============================================
-    function handleMask() {
+     function handleMask() {
       const raw = emailInput.value;
 
       // Empty input
